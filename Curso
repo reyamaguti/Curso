@@ -1,0 +1,21 @@
+// Simulação de torneira com fechamento/abertura automática
+//
+int cm = 0;
+
+void setup()
+{
+  pinMode(3, INPUT);
+  Serial.begin(9600);
+  pinMode(11, OUTPUT);
+}
+
+void loop()
+{
+  Serial.println(digitalRead(3));
+  if (digitalRead(3) == 1) {
+    digitalWrite(11, HIGH);
+    delay(2000); 
+  } else {
+    digitalWrite(11, LOW);
+  }
+}
